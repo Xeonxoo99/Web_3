@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one">0</div>
+    <button onclick="add()">click</button>
+    <script>
+        var count = 0;
+
+        var add = function(){
+            if(count == 10){
+                return; // 함수종료
+            }
+            count += 1
+            document.querySelector('#one').innerText = count;
+        }
+    </script>
+</body>
+</html>

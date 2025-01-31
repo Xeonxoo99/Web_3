@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            [ Switch문 ]
+             - 조건문
+             - switch와 case로 구성
+             - switch의 변수와 case의 상수를 비교하여 일치하면 싱행, 일치하지 않으면 다음 case 문으로 넘어간다.
+             - switch() 괄호 안에는 변수, 상수, 비교연산자 등 데이터가 자유롭게 올 수 있지만, case문 뒤에는 상수 값만 올 수 있다.
+
+             var 변수;
+
+             switch(변수){
+                case 상수 1 : -> 변수 == 상수1이면 실행문 a 실행
+                    실행문 a;
+                    break; -> switch{} 탈출
+
+                case 상수 2 : -> 변수 != 상수1이고 변수 == 상수2 이면 실행문 a 실행
+                    실행문 b;
+                    break; -> switch{} 탈출
+
+                default : -> 변수 != 상수이고, 변수 != 상수2 이면 실행문 c 실행
+                    실행문 c;
+             }
+
+             break?
+             - switch의 중괄호를 빠져나가는 명령어
+             - break문이 없으면 그 다음 동작도 수행
+        */
+
+        var a = 2;
+
+        switch(a){
+            case 1 :
+                console.log('a는 1');
+            break;
+
+            case 2 :
+                console.log('a는 2');
+            break;
+
+            default:
+                console.log('a는 1도 2도 아님')
+        }
+    </script>
+</body>
+</html>
