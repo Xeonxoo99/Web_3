@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputMsg"/>
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+        <li>하나</li>
+        <li>두울</li>
+        <li>세엣</li>
+    </ul>
+
+    <script>
+        // input에 포커스 주기
+        document.querySelector('#inputMsg').focus();
+
+        var send = function(){
+            console.log('send')
+
+            // 1. input에 입력한 value값 가져오기
+            var value = document.querySelector('#inputMsg').value
+            console.log(value);
+            // 2. li 요소 만들기
+            var li = document.createElement('li');
+            // 3. 읽어온 value값을 li의 innerText로 추가
+            li.innerText = value
+            // 4. li를 ul에 추가
+            document.querySelector('#msgList').appendChild(li)
+            // 5. input에 입력한 내용 삭제]
+            document.querySelector('#inputMsg').value = null
+        }
+
+        document.querySelector('#addBtn')
+        .addEventListener('click',function(){
+            send();
+        })
+    </script>
+</body>
+</html>

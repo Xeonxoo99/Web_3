@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="one">
+        <span style="color: red;"></span>
+    </div>
+    
+    <script>
+
+        /*
+           [2] HTML요소 생성
+           새로운 HTML 요소를 생성하기 위해 제공되는 메서드
+           
+           document.write('텍스트');
+            HTML 출력 스트림을 통해 텍스트 출력
+
+            document.createElement('HTML 요소')
+            지정된 HTML 요소를 생성
+        */
+
+        document.write(document.getElementById('one').innerHTML)
+        document.write(document.getElementById('one').innerText)
+        
+        var newH3 = document.createElement('h3');
+        newH3.innerHTML = '새로운 H3!'
+        document.body.appendChild(newH3)
+    </script>
+
+</body>
+</html>

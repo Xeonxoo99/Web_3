@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3> Document </h3>
+    <a href="#" name="a1">a1</a>
+    <a href="#" name="a2">a2</a>
+    <a href="#" name="a3">a3</a>
+    <form action="#"></form>
+    <form action="#"></form>
+    <script>
+
+        /* 
+        
+            [4] HTML 객체 선택
+            HTML 요소들을 선택할 수 있음
+
+
+
+        */
+
+        console.log(document.body); // <body> 요소를 반환
+        console.log(document.anchors); // name 속성을 가지는 <a>태그를 모두 반환
+        console.log(document.domain); // HTML 문서가 위치한 서버의 도메인 네임 반환
+        console.log(document.forms); // <form> 요소를 모두 반환
+        console.log(document.images); // <image> 요소를 모두 반환
+        console.log(document.links); // href 속성을 가지는 요소를 모두 반환
+        console.log(document.title); // title 속성을 가지는 요소를 모두 반환
+        console.log(document.documentElement); // <html> 요소를 반환
+        console.log(document.head); // <head> 요소를 반환
+        console.log(document.cookie); // HTML 문서의 쿠키를 반환
+    </script>
+</body>
+</html>

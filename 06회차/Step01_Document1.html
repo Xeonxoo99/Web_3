@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Document 테스트1</h3>
+    <h3 class="classh3" id="idh3">Document 테스트2</h3>
+    <h3 class="classh3">Document 테스트3</h3>
+    <h3 class="classh3">Document 테스트4</h3>
+    <h3>Document 테스트5</h3>
+    <h3>Document 테스트6</h3>
+    <script>
+        /*
+            [ Document Object Model : DOM ]
+
+            Document 객체는 HTML 요소와 관련된 작업을 도와주는 다양한 메서드를 제공
+
+            - HTML 요소 선택
+            - HTML 요소 생성
+            - HTML 이벤트 핸들러 추가
+            - HTML 객체 선택
+
+            [1] HTML 요소 선택
+            HTML 요소를 선택하기 위해 제공되는 메서드
+
+            document.getElementsByTagName('태그이름')
+            해당 태그 이름의 요소를 모두 선택
+
+            document.getElementById('아이디')
+            해당 아이디의 요소를 선택
+            
+            document.getElementsByClassName('클래스 이름')
+            해당 클래스의 요소를 선택
+
+            document.querySelector('선택자')
+            해당 선택자로 선택되는 첫번째 요소를 선택
+
+            document.querySelectorAll('선택자')
+            해당 선택자로 선택되는 요소를 모두 선택
+        */
+        console.log(document.getElementsByTagName('h3'))
+        console.log(document.getElementById('idh3'))
+        console.log(document.getElementsByClassName('classh3'))
+        console.log(document.querySelector('h3'))
+        console.log(document.querySelectorAll('h3'))
+    </script>
+    
+</body>
+</html>
