@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        padding: 20px;
+    }
+
+    .parent{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        padding: 20px;
+    }
+
+    .child{
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        padding: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        컨테이너
+        <div class="parent">
+            부모
+            <div class="child">
+                자식
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*
+        
+            [ 이벤트 버블링 ]
+            - 특정 HTML 요소에서 이벤트가 발생하면 그 이벤트가 부모 요소로 전달되는 현상
+
+        */
+
+        document.querySelector('body').addEventListener('click',()=>{
+            alert('body 클릭')
+        })
+
+        document.querySelector('.container').addEventListener('click',()=>{
+            alert('container 클릭')
+        })
+
+        document.querySelector('.parent').addEventListener('click',()=>{
+            alert('parent 클릭')
+        })
+
+        document.querySelector('.child').addEventListener('click',(e)=>{
+            e.stopPropagation(); // 이벤트 버블링을 막아주는 코드
+            alert('child 클릭')
+        })
+    </script>
+</body>
+</html>

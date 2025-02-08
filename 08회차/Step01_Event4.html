@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a{text-decoration: none;}
+</style>
+<body>
+    <a href="#">SBS</a>
+    <button>버튼</button>
+    <input type="text"/>
+    <script>
+
+        /*
+            [ focus ]
+            - 선택 되어 있을 때 
+
+            [ blur ]
+            - 선택 안 되어 있을 때 
+        
+        */
+        document.querySelector('a').addEventListener('focus',function(){
+            this.style.textDecoration = 'underline'
+        })
+
+        document.querySelector('a').addEventListener('blur',function(){
+            this.style.textDecoration = 'none'
+        })
+
+        document.querySelector('input').addEventListener('focus',function(){
+            console.log('focus')
+        })
+
+        document.querySelector('input').addEventListener('blur',function(){
+            console.log('blur')
+        })
+    </script>
+</body>
+</html>

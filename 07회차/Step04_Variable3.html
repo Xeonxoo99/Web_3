@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button0">버튼</button>
+    <button id="button1">버튼</button>
+    <button id="button2">버튼</button>
+
+    <script>
+        for(let i = 0; i < 3; i++){
+            document.getElementById(`button${i}`).addEventListener('click',function(){
+                alert(`버튼 ${i} 클릭됨`)
+            })
+        }
+    </script>
+</body>
+</html>

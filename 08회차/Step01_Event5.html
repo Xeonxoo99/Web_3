@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myBox{
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        background-color: yellowgreen;
+        margin-left: 200px;
+    }
+</style>
+<body>
+    <div id="myBox"></div>
+
+    <script>
+        document.querySelector('#myBox').addEventListener('mousemove',function(e){
+            console.log(e);
+
+            let x = e.offsetX;
+            let y = e.offsetY;
+
+            let info = `x:${x}, y:${y}`
+            this.innerText = info
+        })
+    </script>
+</body>
+</html>

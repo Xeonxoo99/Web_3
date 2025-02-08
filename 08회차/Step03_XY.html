@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 1200px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            overflow: auto;
+            background-color: #f0f0f0;
+        }
+        .content{
+            width: 400px;
+            height: 1500px;
+            background-color: yellow;
+        }
+        #output{
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="content"></div> -->
+    </div>
+    <p id="output"></p>
+    <script>
+        /*
+            [ window 크기 ]
+
+            - window.innerWidth : 브라우저 뷰포트의 내부 너비(스크롤바 포함)
+            - window.innerHeight : 브라우저 뷰포트의 내부 높이(스크롤바 포함)
+
+            - window.outerWidth :  브라우저 창 전체의 너비 ( 테두리, 주소창, 툴바 등 포함 ) => 잘 사용 안함
+            - window.outerHeight :  브라우저 창 전체의 높이 ( 테두리, 주소창, 툴바 등 포함 ) => 잘 사용 안함
+
+            - window.screen.width : 사용자 모니터 화면 전체 너비
+            - window.screen.height : 사용자 모니터 화면 전체 높이
+
+            [ window 스크롤 위치 ]
+
+            ( 예전에 만든 페이지들은 pageXoffset, pageYoffset 일 수도 있음 )
+            - window.scrollX : 수평 스크롤 위치 
+            - window.scrollY : 수직 스크롤 위치
+        */
+
+        /*
+        
+            [ 요소의 크기 ]
+
+            - offsetWidth, offsetHeight : 요소의 전체 크기 ( 패딩, 테두리 포함 )
+            - clientWidth, clientHeight : 요소의 내부 크기 ( 패딩포함, 테두리 제외, 스크롤바 크기 제외 )
+            - scrollWidth, scrollHeight : 요소의 전체 내용 크기 ( 보이지 않는 부분 포함 )
+            
+            [ 요소의 위치 ]
+            
+            scrollLeft, scrollTop : 특정 요소의 스크롤 위치
+        */
+
+        const container = document.querySelector('.container');
+        const output = document.querySelector('#output');
+
+        function update(){
+            output.innerHTML = `
+            <span>window</span><br/>
+            <span>innerWidth : window.innerWidth${window.innerWidth}, window.innerHeight${window.innerHeight}</span> <br/>
+            <span>outerWidth : window.outerWidth${window.outerWidth}, window.outerHeight${window.outerHeight}</span> <br/>
+            <span>screen.width : window.screen.width${window.screen.width}, window.screen.height${window.screen.height}</span> <br/>
+            <span>scrollX  : window.scrollX ${window.scrollX }, window.scrollY${window.scrollY}</span> <br/>
+            <br/>
+            <span>container</span>
+            <span>offsetWidth : window.offsetWidth${window.offsetWidth}, window.offsetHeight${window.offsetHeight}</span><br/>
+            <span>clientWidth : window.clientWidth${window.clientWidth}, window.clientHeight${window.clientHeight}</span><br/>
+            <span>scrollWidth : window.scrollWidth${window.scrollWidth}, window.scrollHeight${window.scrollHeight}</span><br/>
+            <span>scrollLeft : window.scrollLeft${window.scrollLeft}, window.scrollTop${window.scrollTop}</span><br/>
+            `
+        }
+
+        update();
+        container.addEventListener('scroll',update);
+        window.addEventListener('scroll',update);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        height: 300px;
+        background-color: yellow;
+        position: relative;
+        margin-top: 2000px;
+    }
+</style>
+<body>
+    <div class="container">
+        <p id="output">
+
+        </p>
+    </div>
+    <script>
+       /*
+        
+            [ clientX , clientY ] = 가장 많이 사용
+            
+            - 사용자에게 보여지는 브라우저 페이지를 기준으로 좌표 표시
+            (스크롤바와 상관 X)
+
+            [ offsetX, offsetY ] = 가장 많이 사용
+            
+            - 요소 영역을 기준으로 좌표 표시
+       
+            [ pageX, pageY ] = 가끔 사용
+            
+            - 스크롤을 포함한 페이지를 기준으로 좌표 표시
+
+            [ screenX, screenY ] = 거의 사용 X
+            
+            - 모니터(스크린)을 기준으로 좌표 표시
+       */
+
+       document.querySelector('.container').addEventListener('mousemove', function(e){
+            const output = document.querySelector('#output')
+
+            const clientX = e.clientX;
+            const clientY = e.clientY;
+
+            const offsetX = e.offsetX;
+            const offsetY = e.offsetY;
+
+            const pageX = e.pageX;
+            const pageY = e.pageY;
+
+            const screenX = e.screenX;
+            const screenY = e.screenY;
+
+            output.innerHTML = `
+                <p>client 좌표 : ${clientX},${clientY}
+                <p>offset 좌표 : ${offsetX},${offsetY}
+                <p>page 좌표 : ${pageX},${pageY}
+                <p>screen 좌표 : ${screenX},${screenY}
+            `
+       })
+    </script>
+</body>
+</html>

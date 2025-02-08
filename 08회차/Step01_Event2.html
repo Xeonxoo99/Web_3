@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+    }
+</style>
+<body>
+    <input type="text" id="inputMsg"/>
+    <p id="myConsole"></p>
+    <script>
+        document.querySelector('#inputMsg').addEventListener('keyup', (e) => {
+            // + 엔터키를 누르면
+            // 1.입력 한 input의 value 값을 읽어와
+            if(e.key === 'Enter'){
+                console.log(e.target)
+                let input = e.target.value
+
+            // 2. p태그의 innerText로 출력
+            document.querySelector('#myConsole').innerText = input
+
+
+            }
+
+        })
+
+        window.addEventListener('scroll',(e)=>{
+            console.log(e.target)
+        })
+    </script>
+</body>
+</html>

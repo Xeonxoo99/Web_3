@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #info{
+        margin-top: 20px;
+        font-size: 18px;
+        color: green;
+    }
+</style>
+<body>
+    <h1>브라우저 창 크기 확인</h1>
+    <div id="info"></div>
+    <script>
+        window.addEventListener('resize',() => {
+            console.log(window.innerWidth)
+            console.log(window.innerHeight)
+
+            const width = window.innerWidth
+            const height = window.innerHeight
+
+            document.getElementById('info').innerText = `브라우저 창의 너비 :${width}, 높이 ${height}`;
+        })
+    </script>
+</body>
+</html>

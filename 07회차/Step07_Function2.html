@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+        
+
+        
+        */
+
+        const a = function(){
+            console.log('a함수')
+        }
+
+        const b = function(){
+            return
+            console.log('b함수')
+        }
+
+        const c = function(){
+            let num = 3 + 1;
+            return num;
+        }
+        
+        const d = function(){
+            return true;
+        }
+
+        const e = function(){
+            return {};
+        }
+
+        const f = function(){
+            return [];
+        }
+
+        const g = function(){
+            return function(){};
+        }
+
+        const getMember = function(){
+            // 로그인 시에 로그인 회원을 DB에 회원목록과 비교해서 그 유저의 정보를 가져와주는 함수
+            // db.collection.findOne()...
+
+            let mem = {num:1, name:'짱구'}
+            return mem;
+        }
+        getMember();
+        console.log(`${mem.name}님 반갑습니다.`)
+
+    </script>
+</body>
+</html>

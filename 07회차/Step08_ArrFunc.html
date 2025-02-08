@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+        
+            [ Arrow Function ]
+        
+        */
+
+        // 함수 선언식
+        function fun1(){
+            // 실행문
+        }
+
+        // 함수 표현식
+        const func2 = function(){
+            // 실행문
+        }
+
+        const func3 = () => {
+            // 실행문
+        }
+
+        // 1.직관적
+        const doubleNum = (x) => {
+            return x * 2;
+        }
+        console.log(doubleNum(4))
+
+        // 2. 소괄호, 중괄호 생략이 가능
+        // 매개변수 하나일 때 소괄호 생략가능
+        // 실행문이 한 줄일때 중괄호 생략가능
+        // 중괄호 생략 시 그 줄은 자동으로 return
+        const plusNum = x => x + 2;
+        console.log(plusNum(4));
+
+        // 3. 내부에서 this값을 사용 할 때 밖에 있던 this 값을 그대로 사용
+        const obj1 = {
+            name : '짱구',
+            func : function(){
+                console.log(this);
+            }
+        }
+        obj1.func()
+
+        const obj2 = {
+            name : '짱구',
+            func : () => {
+                console.log(this);
+            }
+        }
+        obj2.func()
+
+    </script>
+</body>
+</html>

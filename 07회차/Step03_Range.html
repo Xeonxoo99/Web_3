@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+        
+            [ var ]
+            지역 변수로 사용 될 때 범위가 함수 범위.
+            
+        */
+
+        function varTest(){
+            var i = 10;
+            if(true){
+                var i = 20;
+                console.log('블록 안의 var i:', i)
+            }
+            console.log('블록 밖의 var i:', i)
+        }
+
+        varTest()
+
+        /*
+
+            [ let ]
+
+        
+        */
+
+        function letTest(){
+            let j = 10;
+            if(true){
+                let j = 20;
+                console.log('블록 안의 let j:', j)
+            }
+            console.log('블록 밖의 let j:', j)
+        }
+
+        letTest()
+    </script>
+</body>
+</html>

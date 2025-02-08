@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="send()">CLICK1</button>
+    <button id="sendBtn">CLICK2</button>
+    <input type="text" id="inputMsg"/>
+
+    <script>
+
+        /*
+        
+            [ 이벤트 1 ]
+
+            - HTML 태그에 onclick = '함수이름()'
+
+        */
+
+        const send = () => alert('전송완료');
+
+        /*
+        
+            [ 이벤트 2 ]
+
+            - .addEventListener('click',function(){
+                    실행 할 함수
+                })
+
+        */
+
+        document.querySelector('#sendBtn').addEventListener('click',function(){
+            alert('전송완료 2')
+        })
+
+        /*
+        
+            [ 이벤트 3 ]
+
+            - 인자가 2개 이상
+
+        
+        */
+
+        function two (x , y){
+            if(x === 'click'){
+
+            }
+        }
+
+
+        /*
+        
+            [ 키보드 이벤트 ]
+
+        */
+
+        document.querySelector('#inputMsg').addEventListener('keyup',()=>{
+            console.log('keyuped!')
+        })
+    </script>
+</body>
+</html>

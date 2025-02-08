@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myBox{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        padding: 20px;
+        margin: 30px;
+    }
+</style>
+<body>
+    <div id="myBox"></div>
+    <button id="getStyle"> CLICK </button>
+
+    <script>
+        const box = document.querySelector('#myBox')
+        const btn = document.querySelector('#getStyle')
+
+        btn.addEventListener('click',()=>{
+            // 스타일 값 가져오기
+            const computedStyle = getComputedStyle(box);
+            console.log(getComputedStyle(box));
+
+            alert(
+                `box width : ${computedStyle.width}
+                , padding : ${computedStyle.padding}`
+            )
+        })
+    </script>
+</body>
+</html>

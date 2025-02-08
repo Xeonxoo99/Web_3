@@ -31,14 +31,35 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script>
-  var add = function () {
-    // input 값 가져오기
-    var value = document.querySelector("#inputMsg").value;
-    if (value === "") return; // 빈 값 방지
+  /*
+      1. 버튼을 클릭 시에 input에 적은 메세지가 나오게 해주세요.
+      단 li는 list-group-item이라는 클래스를 가지고 있어야 합니다.
 
-    // li 요소 생성
-    var li = document.createElement("li");
-    li.classList.add("list-group-item");
+      클래스 추가 : document.querySelector('').classList.add('클래스명');
+      클래스 제거 : document.querySelector('').classList.remove('클래스명');
+
+      2. 버튼은 form안에 있을때 기본적으로 새로고침이 발생합니다.
+      이 기능을 제거하려면 클릭이벤트 안에 아래 코드를 입력하세요.
+      document.querySelector('').addEventListener("click", function (e) {
+          e.preventDefault();
+      }
+
+      삭제버튼 CLASS .btn.btn-danger.btn-sm
+      태그선택.remove();
+  */
+  
+  /* 내가 쓴거
+  var add = function () {
+
+    // input 값 가져오기
+    var value = document.querySelector('#inputMsg').value;
+    // input 값이 아무것도 없다면 return
+    if (value === "") return;
+
+    // li 요소 만들기
+    var li = document.createElement('li')
+    // li에 class name 추가
+    li.classList.add('list-group-item')
 
     // li style
     li.style.display = "flex";
@@ -68,12 +89,51 @@
 
     // input 초기화
     document.querySelector("#inputMsg").value = "";
-  };
+  }
 
   // 버튼 클릭 이벤트 추가
   document.querySelector("#btnAdd").addEventListener("click", function (e) {
     e.preventDefault(); // 새로고침 방지
     add();
+  });
+  */
+
+  // 선생님이 작성하신 거
+
+  var inputMsg = document.querySelector('#inputMsg');
+  var btnAdd = document.querySelector('#btnAdd');
+  var listGroup = document.querySelector('#list-group');
+
+  btnAdd.addEventListener('click', function(e){
+    e.preventDefault(); // 새로고침 방지
+    
+    // input이 빈 값이면 return;
+    if (!inputMsg.value) return
+
+    // li 생성
+    var createEl = document.createElement("li");
+    /* 
+      createEl.style.display = 'flex'
+      createEl.style.justifyContent = 'space-between'
+    */
+    createEl.style.cssText = "display:flex; justify-content:space-between;"
+    // input 값 li에 넣기
+    createEl.innerHTML = `<span>${inputMsg.value}</span> <button class="btn btn-danger btn-sm"> 삭제 </button>`
+
+    // li > ul에 넣기
+    listGroup.appendChild(createEl);
+    
+    // input값 초기화
+    inputMsg.value = "";
+
+    // li class 추가
+    createEl.classList.add('list-group-item');
+    
+    // 삭제 버튼 작동
+    var deleteButton = createEl.querySelector('.btn-danger');
+    deleteButton.addEventListener('click',function(){
+      this.parentElement.remove();
+    })
   });
 </script>
 
